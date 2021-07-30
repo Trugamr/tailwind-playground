@@ -10,4 +10,7 @@ export default defineConfig({
       cache: false,
     }),
   ],
+  server: {
+    host: true,
+  },
 })

@@ -15,11 +15,11 @@ export type ButtonProps<E extends ElementType> = ButtonOwnProps<E> &
 const defaultElement = 'button'
 
 const modes = {
-  text: '',
+  text: 'text-primary rounded px-1 disabled:text-secondary',
   normal:
-    'shadow-sm rounded-full px-3 py-1.5 border border-gray-200 disabled:border-gray-100 bg-white',
+    'shadow-sm rounded-full px-3 py-1.5 text-primary border border-gray-200 disabled:border-gray-100 bg-white disabled:text-secondary',
   contained:
-    'shadow-sm rounded-full px-3 py-1.5 bg-purple-800 text-white disabled:bg-purple-600 disabled:text-opacity-80 disabled:text-white',
+    'shadow-sm rounded-full px-3 py-1.5 bg-primary text-white disabled:bg-secondary disabled:text-opacity-80',
 }
 
 const Button = <E extends ElementType = typeof defaultElement>({
@@ -35,7 +35,7 @@ const Button = <E extends ElementType = typeof defaultElement>({
   return (
     <Component
       className={clsx(
-        'flex items-center justify-center space-x-1.5 text-sm font-medium text-purple-800 focus:outline-none focus:ring-2 ring-purple-400 rounded px-1 disabled:cursor-not-allowed disabled:text-purple-400',
+        'flex items-center justify-center space-x-1.5 text-sm font-medium focus:outline-none focus:ring-2 ring-secondary disabled:cursor-not-allowed',
         modes[mode],
         className,
       )}
